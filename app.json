@@ -1,0 +1,11 @@
+{
+  "expo": {
+    "name": "NSM",
+    "slug": "NSM",
+    "version": "1.0.0",
+    "assetBundlePatterns": [
+      "**/*"
+    ]
+  },
+  "name": "NSM"
+}
