@@ -1,0 +1,41 @@
+export default {
+  translation: {
+    places: "places",
+    place: "place",
+    theme: "Theme",
+    defaultTheme: "Default Theme",
+    darkTheme: "Dark Theme",
+    lightTheme: "Light Theme",
+    typeSomeThing: "Type Something...",
+    // add address
+    addingShippingAddress: "Adding Shipping Address",
+    area: "Area",
+    streetName: "Street Name",
+    buildingType: "Building Type",
+    buildingName: "Building Name/Number",
+    floorNo: "Floor Number",
+    apartmentNumber: "Apartment Number",
+    addressName: "Address name (my apartment/my office/etc.)",
+    landmark: "Landmark, group number, etc.",
+    mobileNo: "Mobile Number",
+    landlineNo: "Landline Number",
+    saveAddress: "Save Address",
+    // addresses
+    "addAddress":"Add Address",
+    shippingAddresses: "Shipping Addresses",
+    useAsTheShippingAddress: "Use as the shipping address",
+    mobile: "Mobile",
+    edit: "Edit",
+    // rating and reviiews
+    "ratingAndReviews": "Rating And Reviews",
+    "reviews": "Reviews",
+    "rate": "Rate",
+    "ratings": "Ratings",
+    "writeAReview": "Write a review",
+    "addingReview": "Adding Review",
+    "pleaseShareYourOpinion": "Please share your opinion.",
+    "whatIsYouRate": "What is you rate?",
+    "sendReview": "Send review",
+    "addYourPhotos": "Add your photos"
+  },
+};
