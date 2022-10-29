@@ -5,7 +5,7 @@ import { getCategoriesDB } from "../utils/db";
 import ItemGrid from "../components/common/ItemGrid";
 import PageContainer from "../components/PageContainer";
 
-export const Categories = () => {
+export default function Categories() {
   const [categories, setCategories] = useState(null);
   const [viewType, setViewType] = useState(2); // 0 for hide, 1 for grid , 2 for list
   useEffect(() => {
@@ -40,4 +40,4 @@ export const Categories = () => {
       )}
     </PageContainer>
   );
-};
+}

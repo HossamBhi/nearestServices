@@ -1,24 +1,38 @@
 import React from "react";
 import { createStackNavigator } from "@react-navigation/stack";
-import { Places } from "../pages/Places";
-import { Categories } from "../pages/Categories";
+import Places from "../pages/Places";
+import Categories from "../pages/Categories";
 import Settings from "../pages/Settings";
 import SettingsSelectOption from "../pages/SettingsSelectOption";
 import AddAddress from "../pages/AddAddress";
 import Address from "../pages/Addresses";
 import RatingAndReviews from "../pages/RatingAndReviews";
 import AddReview from "../pages/AddReview";
+import HomePage from "../pages/HomePage";
+import Login from "../pages/loginModule/Login";
+import Register from "../pages/loginModule/Register";
+import ForgetPass from "../pages/loginModule/ForgetPass";
+import ChangePassword from "../pages/loginModule/ChangePassword";
+import Tabs from "./Tabs";
 const Stack = createStackNavigator();
 
 export const MainStack = () => (
   <Stack.Navigator
     screenOptions={{ headerShown: false }}
     // initialRouteName="Categories"
-    initialRouteName="RatingAndReviews"
+    // initialRouteName="RatingAndReviews"
   >
+    <Stack.Screen name="Tabs" component={Tabs} />
     <Stack.Group>
-      <Stack.Screen name="Places" component={Places} />
+      <Stack.Screen name="Login" component={Login} />
+      <Stack.Screen name="Register" component={Register} />
+      <Stack.Screen name="ForgetPass" component={ForgetPass} />
+      <Stack.Screen name="ChangePassword" component={ChangePassword} />
+    </Stack.Group>
+    <Stack.Group>
+      <Stack.Screen name="HomePage" component={HomePage} />
       <Stack.Screen name="Categories" component={Categories} />
+      <Stack.Screen name="Places" component={Places} />
       <Stack.Screen name="Settings" component={Settings} />
       <Stack.Screen name="Address" component={Address} />
       <Stack.Screen name="RatingAndReviews" component={RatingAndReviews} />

@@ -3,7 +3,9 @@ import { initReactI18next } from "react-i18next";
 import ar from "./ar";
 import en from "./en";
 import AsyncStorage from "@react-native-async-storage/async-storage";
-import * as RNLocalize from "react-native-localize";
+// import * as RNLocalize from "react-native-localize";
+import * as Localization from "expo-localization";
+
 import { I18nManager } from "react-native";
 // export const APP_LANG = I18nManager.isRTL ? "ar" : "en";
 I18nManager.allowRTL(true);
@@ -26,10 +28,11 @@ const LANGUAGE_DETECTOR = {
         } else {
           console.log("No language is set, choosing English as fallback");
         }
-        const findBestAvailableLanguage =
-          RNLocalize.findBestAvailableLanguage(LANG_CODES);
+        const findBestAvailableLanguage = Localization.locale;
+        //   RNLocalize.findBestAvailableLanguage(LANG_CODES);
 
-        callback(findBestAvailableLanguage.languageTag || "en");
+        // callback(findBestAvailableLanguage.languageTag || "en");
+        callback(findBestAvailableLanguage || "en");
 
         // callback("ar");
         return;
@@ -39,7 +42,7 @@ const LANGUAGE_DETECTOR = {
     });
   },
   init: () => {},
-  cacheUserLanguage: (language) => {
+  cacheUserLanguage: (language: string) => {
     AsyncStorage.setItem("user-language", language);
   },
 };

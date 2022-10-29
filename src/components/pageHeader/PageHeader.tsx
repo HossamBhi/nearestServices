@@ -36,34 +36,25 @@ const PageHeader = ({ viewType = 0, setViewType, style }: PageHeaderProps) => {
       <View style={{ flexDirection: "row" }}>
         <CustomeButton
           onPress={() => setShowSearch(true)}
-          icon={
-            <CustomeIcon
-              name="search"
-              style={[styles.icon, { backgroundColor: colors.primary }]}
-              size={22}
-            />
-          }
+          style={[styles.iconCon, { backgroundColor: colors.primary }]}
+          icon={<CustomeIcon name="search" style={styles.icon} size={22} />}
         />
         {viewType !== 0 && setViewType && (
           <CustomeButton
+            style={[styles.iconCon, { backgroundColor: colors.primary }]}
             onPress={() => setViewType(viewType === 1 ? 2 : 1)}
             icon={
               <CustomeIcon
                 name={viewType === 1 ? "list" : "grid"}
-                style={[styles.icon, { backgroundColor: colors.primary }]}
+                style={styles.icon}
               />
             }
           />
         )}
         <CustomeButton
+          style={[styles.iconCon, { backgroundColor: colors.primary }]}
           onPress={() => navigation.navigate("Settings")}
-          icon={
-            <CustomeIcon
-              name="settings"
-              size={22}
-              style={[styles.icon, { backgroundColor: colors.primary }]}
-            />
-          }
+          icon={<CustomeIcon name="settings" size={22} style={styles.icon} />}
         />
       </View>
       {/* <CustomePicker
@@ -94,14 +85,16 @@ const styles = StyleSheet.create({
     elevation: 5,
   },
   logo: { width: "10%", height: 35, backgroundColor: "#ffffff" },
-  icon: {
-    paddingHorizontal: 6,
-    color: "#ffffff",
-    height: 35,
+  iconCon: {
     alignItems: "center",
-    textAlignVertical: "center",
+    height: 35,
     borderRadius: 4,
+    justifyContent: "center",
     marginHorizontal: 4,
+    paddingHorizontal: 6,
+  },
+  icon: {
+    color: "#ffffff",
   },
 });
 export default PageHeader;

@@ -5,7 +5,7 @@ import ItemGrid from "../components/common/ItemGrid";
 import Place from "../components/places/Place";
 import { getPlacesDB } from "../utils/db";
 
-export const Places = ({ navigation, route }) => {
+export default function Places({ navigation, route }) {
   const [places, setPlaces] = useState(null);
   const id = route?.params?.id;
   console.log("id");
@@ -27,4 +27,4 @@ export const Places = ({ navigation, route }) => {
       numColumns={2}
     />
   );
-};
+}
