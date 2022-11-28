@@ -33,7 +33,7 @@ export default function App() {
     (state: { appSettings: any }) => state.appSettings
   );
   const scheme = useColorScheme();
-  const isDark = (activeTheme.value === 1
+  const isDark = !(activeTheme.value === 1
     ? scheme === "dark"
     : activeTheme.value === 2
     ? true

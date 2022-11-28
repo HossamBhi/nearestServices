@@ -1,4 +1,19 @@
-// address interfacce
+// product props
+export interface productType {
+  id: any;
+  title?: string;
+  description?: string;
+  price?: number;
+  discountPercentage?: number;
+  rating?: number;
+  stock?: number;
+  brand?: string;
+  category?: string;
+  thumbnail?: string;
+  images?: string[];
+}
+
+// address data
 export interface addressProps {
   id?: string | number;
   created_at?: any;
@@ -24,4 +39,19 @@ export interface reviewProps {
   created_at?: any;
   helpful?: number;
   images?: [];
+}
+
+export interface orderType {
+  id?: string | number;
+  created_at?: any;
+  orderNumber?: string;
+  trackingNumber?: string;
+  items: productType[] | [];
+  total?: number;
+  paymentMethod?: {};
+  shippingAddress?: addressProps;
+  deliveryFees?: number;
+  discount?: number;
+  orderStatus: string | number;
+  // orderStatus: "notConfirmied" | "delivered" | "processing" | "cancelled" // 1 | 2 | 3 |4
 }

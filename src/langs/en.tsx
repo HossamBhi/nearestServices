@@ -1,12 +1,16 @@
 export default {
   translation: {
-    places: "places",
-    place: "place",
+    // general
+    comingSoon: "Coming Soon",
+    close: "Close",
     theme: "Theme",
     defaultTheme: "Default Theme",
     darkTheme: "Dark Theme",
     lightTheme: "Light Theme",
     typeSomeThing: "Type Something...",
+    // places
+    places: "places",
+    place: "place",
     // add address
     addingShippingAddress: "Adding Shipping Address",
     area: "Area",
@@ -46,7 +50,7 @@ export default {
     passwordValidationMsg:
       "Minimum six characters, at least one uppercase letter, one lowercase letter, one number and one special character.",
     emailValidationMsg:
-      "Not a valid email address. Should be hossambasha9900@gmail.com",
+      "Not a valid email address. Should be as user@example.com",
     createNewAccount: "Create new account",
     // register
     signUp: "Sign up",
@@ -66,5 +70,22 @@ export default {
     oldPassword: "Old password",
     newPassword: "New Password",
     confirmNewPassword: "Confirm new password",
+    // profile
+    myProfile: "My profile",
+    notifications: "Notifications",
+    paymentMethods: "Payment methods",
+    promocodes: "Promocodes",
+    settings: "Settings",
+    // my orders
+    myOrders: "My orders",
+    trackingNumber: "Tracking number",
+    quantity: "Quantity",
+    totalAmount: "Total amount",
+    details: "Details",
+    // order status
+    notConfirmied: "Not confirmied",
+    delivered: "Delivered",
+    processing: "Processing",
+    cancelled: "Cancelled",
   },
 };

@@ -1,6 +1,13 @@
 import React from "react";
 import { useTheme } from "@react-navigation/native";
-import { StyleSheet, Text, View, StyleProp, ViewStyle } from "react-native";
+import {
+  StyleSheet,
+  Text,
+  View,
+  StyleProp,
+  ViewStyle,
+  TextStyle,
+} from "react-native";
 import useRFontValue from "../../hooks/useRFontValue";
 import CustomeButton from "./CustomeButton";
 
@@ -12,6 +19,8 @@ interface RowComponentProps {
   centerPart?: JSX.Element;
   title?: string;
   des?: string;
+  titleStyle?: StyleProp<TextStyle>;
+  desStyle?: StyleProp<TextStyle>;
 }
 
 const RowComponent = ({
@@ -22,6 +31,8 @@ const RowComponent = ({
   centerPart,
   title,
   des,
+  titleStyle,
+  desStyle,
 }: RowComponentProps) => {
   const { colors } = useTheme();
   return (
@@ -38,17 +49,23 @@ const RowComponent = ({
             }}
           >
             <Text
-              style={{ fontSize: useRFontValue(16), color: colors.text }}
+              style={[
+                { fontSize: useRFontValue(16), color: colors.text },
+                titleStyle,
+              ]}
               numberOfLines={2}
             >
               {title}
             </Text>
             {des && (
               <Text
-                style={{
-                  fontSize: useRFontValue(12),
-                  color: colors.text + "70",
-                }}
+                style={[
+                  {
+                    fontSize: useRFontValue(12),
+                    color: colors.text + "70",
+                  },
+                  desStyle,
+                ]}
                 numberOfLines={2}
               >
                 {des}

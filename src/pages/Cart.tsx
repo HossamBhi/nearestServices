@@ -5,7 +5,7 @@ import * as Animatable from "react-native-animatable";
 const Cart = () => {
   return (
     <View style={styles.container}>
-      <Animatable.Text animation="zoomInUp">Profile Page</Animatable.Text>
+      <Animatable.Text  style={{fontSize: 40}} animation="zoomInUp">Coming Soon</Animatable.Text>
     </View>
   );
 };

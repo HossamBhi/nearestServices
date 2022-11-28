@@ -22,7 +22,7 @@ export default ({
   icon,
   children,
 }: CustomeButtonProps) => {
-  const { colors } = useTheme();
+  const { colors }: any = useTheme();
   return (
     <Pressable
       style={[style, disabled && { backgroundColor: colors.disabled }]}
@@ -30,7 +30,9 @@ export default ({
       disabled={disabled ? true : false}
     >
       {text && (
-        <CustomeText style={[textStyle, disabled && { color: "#B1B1B1" }]}>
+        <CustomeText
+          style={[textStyle, disabled && { color: colors.onDisabled }]}
+        >
           {text}
         </CustomeText>
       )}

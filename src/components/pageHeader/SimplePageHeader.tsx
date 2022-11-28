@@ -1,19 +1,19 @@
-import React, { useState } from "react";
-import { StyleProp, StyleSheet, View } from "react-native";
+import React from "react";
+import { StyleProp, StyleSheet, View, ViewStyle } from "react-native";
 import CustomeButton from "../common/CustomeButton";
 import { useNavigation } from "@react-navigation/native";
 import CustomeIcon from "../common/CustomeIcon";
 import { useTheme } from "react-native-paper";
 import { Ionicons } from "@expo/vector-icons";
-import { isRTL } from "../../langs";
 import CustomeText from "../common/CustomeText";
 
 interface SimplePageHeaderProps {
-  style?: StyleProp<any>;
+  style?: StyleProp<ViewStyle>;
   title?: string;
   iconRight?: JSX.Element;
   onPressRight?: () => void;
-  iconRightStyle?: StyleProp<any>;
+  iconRightStyle?: StyleProp<ViewStyle>;
+  hideBack?: boolean;
 }
 
 const SimplePageHeader = ({
@@ -22,6 +22,7 @@ const SimplePageHeader = ({
   iconRight,
   onPressRight,
   iconRightStyle,
+  hideBack,
 }: SimplePageHeaderProps) => {
   const { colors } = useTheme();
   const navigation = useNavigation();
@@ -34,19 +35,21 @@ const SimplePageHeader = ({
         style,
       ]}
     >
-      <CustomeButton
-        onPress={() => navigation.goBack()}
-        style={[styles.icon, { backgroundColor: colors.primary }]}
-        icon={
-          <CustomeIcon
-            Tag={Ionicons}
-            name={isRTL ? "ios-arrow-forward" : "ios-arrow-back"}
-            size={22}
-            color={"#ffffff"}
-          />
-        }
-      />
-      <CustomeText style={styles.title}>{title}</CustomeText>
+      {!hideBack && (
+        <CustomeButton
+          onPress={() => navigation.goBack()}
+          // style={[styles.icon, { backgroundColor: colors.primary }]}
+          icon={
+            <CustomeIcon
+              Tag={Ionicons}
+              name="chevron-back-outline"
+            />
+          }
+        />
+      )}
+      <CustomeText style={[styles.title, { marginLeft: hideBack ? 0 : -22 }]}>
+        {title}
+      </CustomeText>
       {iconRight && (
         <CustomeButton
           onPress={onPressRight}

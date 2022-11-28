@@ -7,7 +7,13 @@ import {
   DarkTheme as PaperDarkTheme,
 } from "react-native-paper";
 
-const primary_color = "#FF9431";
+const primary_color = "#0a8791";
+const light = "#22939A";
+const dark = "#065155";
+// const primary_color = "#FF9431";
+// const light: "#ff674d",
+// const dark: "#a10000";
+
 // "#3B8FAA"
 export const DefaultTheme = {
   ...NavigationDefaultTheme,
@@ -18,11 +24,12 @@ export const DefaultTheme = {
     background: "#F9F9F9",
     surface: "#ffffff",
     primary: primary_color,
-    light: "#ffc562",
-    dark: "#c66500",
+    light,
+    dark,
     text: "#000000",
     border: "#206C84",
     error: "#F32013",
+    onDisabled: "#595f68",
   },
 };
 
@@ -34,10 +41,11 @@ export const DarkTheme = {
     ...PaperDarkTheme.colors,
     background: "#14191F",
     primary: primary_color,
-    light: "#ffc562",
-    dark: "#c66500",
+    light,
+    dark,
     surface: "#0B0F13",
     text: "#ffffff",
     error: "#CA0B00",
+    onDisabled: "#bcc3cd",
   },
 };

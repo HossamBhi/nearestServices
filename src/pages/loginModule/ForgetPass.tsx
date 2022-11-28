@@ -16,7 +16,7 @@ export default function ForgetPass() {
   const handleOnSubmit = () => {
     if (checkEmailValidation(email)) {
       alert("Send Successfully.");
-      navigation.navigate("HomePage" as never);
+      navigation.navigate("Tabs" as never);
     }
   };
 

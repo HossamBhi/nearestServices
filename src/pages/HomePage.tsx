@@ -22,22 +22,6 @@ const HomePage = () => {
           onPress={() => navigation.navigate("ForgetPass" as never)}
         />
         <RowComponent
-          title={t("changePassword")}
-          onPress={() => navigation.navigate("ChangePassword" as never)}
-        />
-        <RowComponent
-          title="categories"
-          onPress={() => navigation.navigate("Categories" as never)}
-        />
-        <RowComponent
-          title="Settings"
-          onPress={() => navigation.navigate("Settings" as never)}
-        />
-        <RowComponent
-          title="Addresses"
-          onPress={() => navigation.navigate("Address" as never)}
-        />
-        <RowComponent
           title="RatingAndReviews"
           onPress={() => navigation.navigate("RatingAndReviews" as never)}
         />

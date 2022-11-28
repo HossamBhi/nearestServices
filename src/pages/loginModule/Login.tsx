@@ -21,7 +21,7 @@ export default function Login() {
   const { colors } = useTheme();
   const handleOnSubmit = () => {
     if (checkEmailValidation(email) && checkPasswordValidation(password)) {
-      navigation.navigate("HomePage" as never);
+      navigation.navigate("Tabs" as never);
     }
   };
 

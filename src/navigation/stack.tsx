@@ -14,24 +14,29 @@ import Register from "../pages/loginModule/Register";
 import ForgetPass from "../pages/loginModule/ForgetPass";
 import ChangePassword from "../pages/loginModule/ChangePassword";
 import Tabs from "./Tabs";
+import Orders from "../pages/Orders";
 const Stack = createStackNavigator();
 
 export const MainStack = () => (
   <Stack.Navigator
     screenOptions={{ headerShown: false }}
-    // initialRouteName="Categories"
-    // initialRouteName="RatingAndReviews"
+    // initialRouteName="Login"
+    initialRouteName="Tabs"
   >
     <Stack.Screen name="Tabs" component={Tabs} />
+    <Stack.Screen name="Orders" component={Orders} />
+    {/* start login module */}
     <Stack.Group>
       <Stack.Screen name="Login" component={Login} />
       <Stack.Screen name="Register" component={Register} />
       <Stack.Screen name="ForgetPass" component={ForgetPass} />
       <Stack.Screen name="ChangePassword" component={ChangePassword} />
     </Stack.Group>
+    {/* end login module */}
+
     <Stack.Group>
-      <Stack.Screen name="HomePage" component={HomePage} />
-      <Stack.Screen name="Categories" component={Categories} />
+      {/* <Stack.Screen name="HomePage" component={HomePage} /> */}
+      {/* <Stack.Screen name="Categories" component={Categories} /> */}
       <Stack.Screen name="Places" component={Places} />
       <Stack.Screen name="Settings" component={Settings} />
       <Stack.Screen name="Address" component={Address} />

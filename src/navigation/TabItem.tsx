@@ -16,13 +16,17 @@ export default function TabItem(props: any) {
   useEffect(() => {
     if (focused) {
       tabRef.current?.animate({
+        // 0: { scale: 0, rotate: "0deg" },
+        // 1: { scale: 1.5, rotate: "360deg" },
         0: { scale: 0, rotate: "0deg" },
         1: { scale: 1.5, rotate: "360deg" },
       });
     } else {
       tabRef.current?.animate({
-        0: { scale: 1.5, rotate: "360deg" },
-        1: { scale: 0.8, rotate: "0deg" },
+        0: { scale: 1.5 },
+        1: { scale: 0.9},
+        // 0: { scale: 1.5, rotate: "360deg" },
+        // 1: { scale: 1, rotate: "0deg" },
       });
     }
   }, [focused]);

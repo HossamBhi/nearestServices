@@ -1,5 +1,5 @@
 import React from "react";
-import { View, StyleSheet } from "react-native";
+import { View, StyleSheet, StyleProp, TextStyle } from "react-native";
 import { useNavigation } from "@react-navigation/native";
 import { Ionicons } from "@expo/vector-icons";
 import CustomeIcon from "../common/CustomeIcon";
@@ -10,9 +10,11 @@ import CustomeButton from "../common/CustomeButton";
 export default function Header({
   text,
   hideBack,
+  textStyle,
 }: {
   text: string;
   hideBack?: boolean;
+  textStyle?: StyleProp<TextStyle>;
 }) {
   const navigation = useNavigation();
 
@@ -30,7 +32,9 @@ export default function Header({
           }
         />
       )}
-      <CustomeText style={{ fontSize: useRFontValue(34), paddingTop: 24 }}>
+      <CustomeText
+        style={[{ fontSize: useRFontValue(34), paddingTop: 24 }, textStyle]}
+      >
         {text}
       </CustomeText>
     </View>
